@@ -1,0 +1,212 @@
+{
+  "parish": {
+    "name": "GIÁO XỨ ĐỒNG TIẾN",
+    "deanery": "Giáo Hạt Hàm Tân",
+    "diocese": "Giáo Phận Phan Thiết",
+    "address": "587 Thống Nhất - Kp.4 - P.Tân An - Tx.Lagi - Bình Thuận",
+    "phone": "02523706787",
+    "website": "giaoxudongtien.com",
+    "email": "petnguyenvanquang@gmail.com"
+  },
+
+  "family": {
+    "code": "01-004/PR",
+    "grandparentsName": "Dũng - Hà",
+    "christianCommunity": "GIÁO HỌ THÁNH PHÊRÔ",
+
+    "husband": {
+      "name": "Nguyễn Văn Dũng",
+      "parents": "Con Ông Nguyễn Văn Mỹ, Và Bà Phạm Thị Chính"
+    },
+
+    "wife": {
+      "name": "Quang Trang Hà",
+      "parents": "Con Ông Quang Minh Ký, Và Bà Têrêxa Lý Mùi"
+    },
+
+    "marriage": {
+      "priest": "Fx. Phạm Tiến Hành",
+      "church": "Vinh Tân",
+      "witness1": "Giuse Phạm Văn Quang",
+      "witness2": "Maria Trương Thị Quyên"
+    },
+
+    "address": "",
+    "phone": "",
+    "occupation": ""
+  },
+
+  "members": [
+    {
+      "code": 13,
+      "christianName": "Phêrô",
+      "fullName": "Nguyễn Văn Dũng",
+      "birthDate": "25/06/1959",
+      "birthPlace": "Lagi",
+
+      "baptism": {
+        "date": "16/08/1967"
+      },
+
+      "firstCommunion": {
+        "date": "06/04/1996",
+        "place": "Vinh Tân"
+      },
+
+      "marriage": {
+        "date": "2001"
+      },
+
+      "relationship": "Chồng"
+    },
+
+    {
+      "code": 14,
+      "christianName": "Têrêxa",
+      "fullName": "Quang Trang Hà",
+      "birthDate": "1963",
+      "birthPlace": "Sài Gòn",
+
+      "baptism": {
+        "date": "06/04/1996",
+        "place": "Vinh Tân"
+      },
+
+      "firstCommunion": {
+        "date": "06/04/1996",
+        "place": "Vinh Tân"
+      },
+
+      "confirmation": {
+        "date": "06/04/1996",
+        "place": "Vinh Tân"
+      },
+
+      "communion": {
+        "date": "06/04/1996",
+        "place": "Vinh Tân"
+      },
+
+      "baptismPriest": "Fx.phạm Tiến Hành",
+      "confirmationBishop": "Fx.phạm Tiến Hành",
+
+      "relationship": "Vợ"
+    },
+
+    {
+      "code": 15,
+      "christianName": "Maria",
+      "fullName": "Nguyễn Thị Mỹ Linh",
+      "birthDate": "25/03/1989",
+      "birthPlace": "Lagi",
+
+      "baptism": {
+        "date": "07/04/1996",
+        "place": "Vinh Tân"
+      },
+
+      "firstCommunion": {
+        "date": "29/06/2000",
+        "place": "Vinh Tân"
+      },
+
+      "confirmation": {
+        "date": "22/08/2004",
+        "place": "Vinh Tân"
+      },
+
+      "baptismPriest": "Phêrô Phạm Tiến Hành",
+      "confirmationBishop": "Phaolo Nguyễn Thanh Hoan",
+
+      "baptismGodparent": "Lucia Phan Thị Đen",
+      "confirmationGodparent": "Lucia Phan Thị Tâm",
+
+      "relationship": "Con"
+    },
+
+    {
+      "code": 16,
+      "christianName": "Têrêxa",
+      "fullName": "Nguyễn Thị Mỹ Liên",
+      "birthDate": "07/03/1994",
+      "birthPlace": "Lagi",
+
+      "baptism": {
+        "date": "07/03/1996",
+        "place": "Vinh Tân"
+      },
+
+      "firstCommunion": {
+        "date": "29/06/2004",
+        "place": "Vinh Tân"
+      },
+
+      "confirmation": {
+        "date": "20/07/2008",
+        "place": "Vinh Tân"
+      },
+
+      "baptismPriest": "Phêrô Phạm Tiến Hành",
+      "confirmationBishop": "Phaolo Nguyễn Thanh Hoan",
+
+      "baptismGodparent": "Ter. Ngô Thị Mai Loan",
+      "confirmationGodparent": "Ter. Hoàng Thị Thanh Bình",
+
+      "relationship": "Con"
+    },
+
+    {
+      "code": 17,
+      "christianName": "Maria",
+      "fullName": "Nguyễn Thị Mỹ Loan",
+      "birthDate": "13/08/1995",
+      "birthPlace": "Lagi",
+
+      "baptism": {
+        "date": "07/04/1996",
+        "place": "Vinh Tân"
+      },
+
+      "firstCommunion": {
+        "date": "29/06/2004",
+        "place": "Vinh Tân"
+      },
+
+      "confirmation": {
+        "date": "20/07/2008",
+        "place": "Vinh Tân"
+      },
+
+      "baptismPriest": "Phêrô Phạm Tiến Hành",
+      "confirmationBishop": "Phaolo Nguyễn Thanh Hoan",
+
+      "baptismGodparent": "Maria Nguyễn Thị Kim Hồng",
+      "confirmationGodparent": "Maria Nguyễn Thị Liên",
+
+      "relationship": "Con"
+    },
+
+    {
+      "code": 18,
+      "christianName": "Giuse",
+      "fullName": "Nguyễn Quang Long",
+      "birthDate": "04/09/1998",
+      "birthPlace": "Lagi",
+
+      "baptism": {
+        "date": "04/10/1998",
+        "place": "Vinh Tân"
+      },
+
+      "baptismGodparent": "Giuse Phạm Văn Quang",
+
+      "relationship": "Con"
+    }
+  ],
+
+  "footer": {
+    "memberCount": 3,
+    "date": "Đồng Tiến, ngày 09 tháng 12 năm 2023",
+    "parishPriest": "Phêrô NGUYỄN VĂN QUANG"
+  }
+}
