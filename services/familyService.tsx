@@ -100,7 +100,7 @@ export async function getPageData(fcode: string) {
       husband = cData.find((c) => c.MaGiaoDan === member.MaGiaoDan) || null;
     }
     if (member.VaiTro === 1) {
-      wife = cData.find((c) => c.MaGiaoDan === member.MaGiaoDan) || null;
+      wife =  cData.find((c) => c.MaGiaoDan === member.MaGiaoDan) || null;
     }
   }
 
@@ -110,8 +110,11 @@ export async function getPageData(fcode: string) {
 
   const husbandName = husband?.HoTen || "";
   const wifeName = wife?.HoTen || "";
-  const husbandParents = husband?.HoTenCha || "" + ", " + husband?.HoTenMe || "";
-  const wifeParents = wife?.HoTenCha || "" + ", " + wife?.HoTenMe || "";
+  const husbandParents = "Con Ông " + (husband?.HoTenCha || "") + " và Bà " + (husband?.HoTenMe || "");
+  const wifeParents = "Con Ông " + (wife?.HoTenCha || "") + " và Bà " + (wife?.HoTenMe || "");
+
+  console.log("Husband:", husbandParents);
+  console.log("Wife:", wifeParents);
 
   const christianMarriage = await getChristianMarriagesData(husband.MaGiaoDan);
 
