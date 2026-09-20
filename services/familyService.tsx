@@ -67,6 +67,12 @@ function translateMaGiaoHo(maGiaoHo: number): string {
   switch (maGiaoHo) {
     case 1:
       return "THÁNH PHÊRÔ";
+    case 2:
+      return "THÁNH GIUSE";
+    case 3:
+      return "THÁNH GIOAN BAOTIXITA";
+    case 4:
+      return "THÁNH ANTÔN";
     default:
       return "Unknown Parish";
   }
@@ -112,10 +118,6 @@ export async function getPageData(fcode: string) {
   const wifeName = wife?.HoTen || "";
   const husbandParents = "Con Ông " + (husband?.HoTenCha || "") + " và Bà " + (husband?.HoTenMe || "");
   const wifeParents = "Con Ông " + (wife?.HoTenCha || "") + " và Bà " + (wife?.HoTenMe || "");
-
-  console.log("Husband:", husbandParents);
-  console.log("Wife:", wifeParents);
-
   const christianMarriage = await getChristianMarriagesData(husband.MaGiaoDan);
 
   const marriage = await getMarriageData(christianMarriage[0]?.MaHonPhoi || 0);

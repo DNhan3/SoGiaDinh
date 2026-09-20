@@ -1,4 +1,5 @@
 import { FamilyRecordData, FamilyMember } from "@/types/family";
+import Image from "next/image";
 
 interface Props {
   data: FamilyRecordData;

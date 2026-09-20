@@ -2,6 +2,13 @@ import FamilyRecord from "@/components/FamilyRecord";
 import { getPageData } from "@/services/familyService";
 import { notFound } from "next/navigation";
 
+export const metadata = {
+  title: "Sổ Gia Đình",
+  icons: {
+    icon: "/logo.png",
+  },
+  description: "Sổ Gia Đình Công Giáo",
+};
 type PageProps = {
   searchParams: Promise<{
     file?: string;
