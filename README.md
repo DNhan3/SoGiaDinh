@@ -1,36 +1,154 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## NFC Card Access
 
-## Getting Started
+This application is designed to serve **a large number of Catholic family records**, with each family assigned an NFC card.
 
-First, run the development server:
+Each NFC card contains a URL that directly identifies the corresponding family record.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### NFC URL Format
+
+The URL follows this format:
+
+```text
+https://giaoxudongtienht.io.vn/GH/{familyId}.html
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+For example:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+https://giaoxudongtienht.io.vn/GH/03-015.html
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Here:
 
-## Learn More
+```text
+GH/
+└── 03-015.html
+    └── Family identifier
+```
 
-To learn more about Next.js, take a look at the following resources:
+The `.html` URL format is intentionally preserved because these URLs are used by the NFC cards.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### User Flow
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The normal user flow is:
 
-## Deploy on Vercel
+```text
+┌─────────────┐
+│  NFC Card   │
+└──────┬──────┘
+       │
+       │ Scan
+       ▼
+┌──────────────────────────────────────────┐
+│ https://giaoxudongtienht.io.vn/          │
+│              GH/03-015.html              │
+└────────────────────┬─────────────────────┘
+                     │
+                     ▼
+              Next.js Route
+                     │
+                     ▼
+              Extract 03-015
+                     │
+                     ▼
+             Find Family Data
+                     │
+                     ▼
+             FamilyRecord
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### No Homepage Required
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The homepage (`/`) is **not part of the normal user flow**.
+
+Users will normally access the application directly through the URL stored on their NFC card.
+
+For example:
+
+```text
+NFC Card #1
+→ /GH/03-015.html
+
+NFC Card #2
+→ /GH/03-016.html
+
+NFC Card #3
+→ /GH/03-017.html
+
+...
+```
+
+There can be hundreds or thousands of these URLs, while the application uses the same React component to render each family.
+
+### Next.js Routing
+
+The application should handle the `.html` URLs and extract the family identifier from the path.
+
+Conceptually:
+
+```text
+/GH/03-015.html
+       │
+       ▼
+    03-015
+       │
+       ▼
+  Family Data
+       │
+       ▼
+ FamilyRecord
+```
+
+The application should **not create a separate React page for every family**.
+
+Instead, one dynamic route/component should handle all family URLs.
+
+### Example
+
+When a user scans the NFC card containing:
+
+```text
+https://giaoxudongtienht.io.vn/GH/03-015.html
+```
+
+the application should:
+
+1. Receive the request for `/GH/03-015.html`
+2. Extract `03-015`
+3. Use `03-015` to identify the family
+4. Load the corresponding family data
+5. Render the `FamilyRecord` component
+
+The same logic can then handle:
+
+```text
+/GH/03-001.html
+/GH/03-002.html
+/GH/03-003.html
+...
+/GH/03-999.html
+```
+
+without creating individual pages for each family.
+
+## Important Requirement
+
+The `.html` URL format is part of the system's existing NFC-card structure.
+
+Therefore, the Next.js application should **preserve this URL format** rather than replacing it with a new URL such as:
+
+```text
+/family/03-015
+```
+
+or:
+
+```text
+/03-015
+```
+
+The target URL remains:
+
+```text
+/GH/03-015.html
+```
